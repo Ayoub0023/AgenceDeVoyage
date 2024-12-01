@@ -1,0 +1,199 @@
+-- Create Databases
+CREATE DATABASE hotel_service_db;
+CREATE DATABASE flight_service_db;
+CREATE DATABASE car_service_db;
+CREATE DATABASE payment_service_db;
+CREATE DATABASE notification_service_db;
+CREATE DATABASE review_service_db;
+CREATE DATABASE destination_service_db;
+CREATE DATABASE batch_service_db;
+
+-- Hotel Service
+USE hotel_service_db;
+
+-- Create 'hotel' table
+CREATE TABLE hotel (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    location VARCHAR(255) NOT NULL,
+    rating INT,
+    available BOOLEAN DEFAULT TRUE
+);
+
+-- Create 'room' table
+CREATE TABLE room (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    hotel_id INT,
+    room_type VARCHAR(255) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    capacity INT NOT NULL,
+    FOREIGN KEY (hotel_id) REFERENCES hotel(id) ON DELETE CASCADE
+);
+
+-- Create 'customer' table
+CREATE TABLE customer (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    phone VARCHAR(15)
+);
+
+-- Create 'booking' table
+CREATE TABLE booking (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT,
+    hotel_id INT,
+    check_in_date DATE,
+    check_out_date DATE,
+    total_price DECIMAL(10, 2),
+    FOREIGN KEY (customer_id) REFERENCES customer(id),
+    FOREIGN KEY (hotel_id) REFERENCES hotel(id)
+);
+
+-- Create 'hotel_review' table
+CREATE TABLE hotel_review (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    hotel_id INT,
+    customer_id INT,
+    rating INT CHECK (rating BETWEEN 1 AND 5),
+    review_text TEXT,
+    FOREIGN KEY (hotel_id) REFERENCES hotel(id),
+    FOREIGN KEY (customer_id) REFERENCES customer(id)
+);
+
+-- Insert sample data into 'hotel' table
+INSERT INTO hotel (name, location, rating, available) VALUES 
+('Hotel A', 'Paris', 5, TRUE),
+('Hotel B', 'New York', 4, TRUE),
+('Hotel C', 'Tokyo', 3, TRUE);
+
+-- Insert sample data into 'room' table
+INSERT INTO room (hotel_id, room_type, price, capacity) VALUES 
+(1, 'Single', 100.00, 1),
+(1, 'Double', 150.00, 2),
+(2, 'Single', 120.00, 1),
+(2, 'Suite', 200.00, 3);
+
+-- Insert sample data into 'customer' table
+INSERT INTO customer (name, email, phone) VALUES 
+('John Doe', 'john.doe@example.com', '1234567890'),
+('Jane Smith', 'jane.smith@example.com', '0987654321');
+
+-- Insert sample data into 'booking' table
+INSERT INTO booking (customer_id, hotel_id, check_in_date, check_out_date, total_price) VALUES 
+(1, 1, '2024-12-01', '2024-12-05', 400.00),
+(2, 2, '2024-11-10', '2024-11-15', 600.00);
+
+-- Insert sample data into 'hotel_review' table
+INSERT INTO hotel_review (hotel_id, customer_id, rating, review_text) VALUES 
+(1, 1, 5, 'Excellent stay! Highly recommended.'),
+(2, 2, 4, 'Great experience, but a bit pricey.');
+
+-- Flight Service
+USE flight_service_db;
+
+-- Create 'flight' table
+CREATE TABLE flight (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    flight_number VARCHAR(50) NOT NULL,
+    departure VARCHAR(255) NOT NULL,
+    destination VARCHAR(255) NOT NULL,
+    available_seats INT,
+    price DECIMAL(10, 2) NOT NULL
+);
+
+-- Create 'flight_booking' table
+CREATE TABLE flight_booking (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT,
+    flight_id INT,
+    booking_date DATE,
+    seat_count INT,
+    total_price DECIMAL(10, 2),
+    FOREIGN KEY (customer_id) REFERENCES customer(id),
+    FOREIGN KEY (flight_id) REFERENCES flight(id)
+);
+
+-- Insert sample data into 'flight' table
+INSERT INTO flight (flight_number, departure, destination, available_seats, price) VALUES 
+('AA101', 'Paris', 'New York', 50, 500.00),
+('DL202', 'London', 'Tokyo', 100, 450.00),
+('AF303', 'Berlin', 'Dubai', 30, 300.00);
+
+-- Insert sample data into 'flight_booking' table
+INSERT INTO flight_booking (customer_id, flight_id, booking_date, seat_count, total_price) VALUES 
+(1, 1, '2024-12-01', 1, 500.00),
+(2, 2, '2024-11-10', 2, 900.00);
+
+-- Car Service (Placeholder for future integration)
+USE car_service_db;
+
+-- Create 'car' table
+CREATE TABLE car (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    model VARCHAR(255) NOT NULL,
+    rental_price DECIMAL(10, 2) NOT NULL,
+    available BOOLEAN DEFAULT TRUE
+);
+
+-- Payment Service (Placeholder for future integration)
+USE payment_service_db;
+
+-- Create 'payment' table
+CREATE TABLE payment (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT,
+    amount DECIMAL(10, 2),
+    payment_date DATE,
+    status VARCHAR(50),
+    FOREIGN KEY (customer_id) REFERENCES customer(id)
+);
+
+-- Notification Service (Placeholder for future integration)
+USE notification_service_db;
+
+-- Create 'notification' table
+CREATE TABLE notification (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT,
+    message TEXT,
+    sent_date DATE,
+    type VARCHAR(50),
+    FOREIGN KEY (customer_id) REFERENCES customer(id)
+);
+
+-- Review Service (Placeholder for future integration)
+USE review_service_db;
+
+-- Create 'review' table (for general reviews)
+CREATE TABLE review (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    review_text TEXT,
+    rating INT CHECK (rating BETWEEN 1 AND 5),
+    customer_id INT,
+    date DATE,
+    FOREIGN KEY (customer_id) REFERENCES customer(id)
+);
+
+-- Destination Service (Placeholder for future integration)
+USE destination_service_db;
+
+-- Create 'destination' table
+CREATE TABLE destination (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    country VARCHAR(255)
+);
+
+-- Spring Batch Service (Placeholder for future integration)
+USE batch_service_db;
+
+-- Create 'batch_job' table
+CREATE TABLE batch_job (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    job_name VARCHAR(255) NOT NULL,
+    status VARCHAR(50),
+    start_date TIMESTAMP,
+    end_date TIMESTAMP
+);
