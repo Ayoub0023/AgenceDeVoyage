@@ -1,0 +1,436 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ffffff, #f9f9f9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, rgb(0, 59, 149), #00f2fe);
+    color: white;
+    padding: 1.5rem 1rem;
+    width: 100%;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.main-nav .tab {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.main-nav .tab:hover,
+.main-nav .tab.active {
+    background: #555;
+    transform: scale(1.1);
+}
+
+/* Category Section */
+.category-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Display 3 items per row */
+    gap: 2rem;
+    padding: 2rem 0; /* Removed excessive horizontal padding */
+    width: 90%; /* Reduced width slightly to fit the layout */
+    margin-right: 350px; /* Offset to avoid overlap with the cart */
+}
+
+.category-section.hidden {
+    display: none;
+}
+
+/* Item (Hotel Container) */
+.item {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px; /* Adjusted width for larger containers */
+    height: 400px; /* Height to fit larger images */
+}
+
+.item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+.item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.item p {
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.add-to-cart {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background: #218838;
+    transform: scale(1.1);
+}
+
+/* Cart Section */
+.cart {
+    position: fixed;
+    top: 20%;
+    right: 2%;
+    width: 300px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.cart h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.cart ul {
+    list-style: none;
+    padding: 0;
+}
+
+.cart ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart ul li:last-child {
+    border-bottom: none;
+}
+
+.cart #checkout {
+    display: block;
+    width: 100%;
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cart #checkout:hover {
+    background: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Popup Form */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full screen overlay */
+    height: 100%; /* Full screen overlay */
+    background: rgba(0, 0, 0, 0.5); /* Slightly transparent background for the overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.popup.hidden {
+    display: none; /* Hide the popup when not active */
+}
+
+.popup-content {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    width: 90%; /* Responsive width */
+    max-width: 450px; /* Slightly smaller width for better focus */
+    padding: 1.5rem;
+    text-align: center;
+    z-index: 2001;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Even spacing between elements */
+}
+
+/* Heading inside the popup */
+.popup-content h2 {
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* Form elements */
+.popup-content form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Ensures fields span the full width */
+    gap: 1rem; /* Spacing between form elements */
+}
+
+.popup-content form label {
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.popup-content form input,
+.popup-content form select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.popup-content form input:focus,
+.popup-content form select:focus {
+    border-color: #007bff; /* Highlight the input on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Button container */
+.popup-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+/* Confirm button */
+#save-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+    flex: 1;
+}
+
+#save-btn:hover {
+    background: #218838;
+    transform: scale(1.05);
+}
+
+/* Cancel button */
+#cancel-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+    flex: 1;
+}
+
+#cancel-btn:hover {
+    background: #c82333;
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 480px) {
+    .popup-content {
+        padding: 1rem;
+        max-width: 95%;
+    }
+
+    #save-btn,
+    #cancel-btn {
+        font-size: 0.9rem;
+        padding: 0.7rem;
+    }
+}
+
+/* Flights Section */
+.flights-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Responsive grid */
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px; /* Center content and limit max width */
+    margin: 0 auto; /* Center the grid container */
+    padding: 1rem;
+}
+
+.flight-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.flight-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.flight-info {
+    margin-bottom: 1.5rem;
+}
+
+.flight-info p {
+    margin: 0.5rem 0;
+}
+
+.flight-action {
+    margin-top: 1rem;
+}
+
+.add-to-cart {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background: #218838;
+    transform: scale(1.1);
+}
+
+/* Cars Section */
+.cars-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px; /* Center content and limit max width */
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.car-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.car-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.car-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.disconnect-button {
+    font-size: 1.1rem;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.disconnect-button:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+.my-reservations {
+    font-size: 1.1rem;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.my-reservations:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+

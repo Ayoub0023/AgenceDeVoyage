@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gérer les Vols</title>
+    <link rel="stylesheet" href="/css/manage-flight.css">
+    <link rel="stylesheet" href="/css/SharedStyles.css">
+</head>
+<body>
+<!-- Include header -->
+<div th:replace="header :: header"></div>
+
+<main>
+    <div class="title-container">
+        <h1 class="page-title">Gérer les Vols</h1>
+    </div>
+    <div class="table-container">
+        <button id="addFlightBtn" class="action-btn add-btn">+</button>
+        <table class="flight-table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Compagnie Aérienne</th>
+                <th>Départ</th>
+                <th>Arrivée</th>
+                <th>Date de Départ</th>
+                <th>Heure de Départ</th>
+                <th>Date d'Arrivée</th>
+                <th>Heure d'Arrivée</th>
+                <th>Prix</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody id="flightList">
+            <!-- Les vols seront chargés dynamiquement ici -->
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<!-- Form Popup for Add/Edit -->
+<div id="flightFormPopup" class="popup hidden">
+    <div class="popup-content">
+        <h2 id="popupTitle">Ajouter un Vol</h2>
+        <form id="flightForm">
+            <label for="airline">Compagnie Aérienne</label>
+            <input type="text" id="airline" name="airline" required>
+
+            <label for="departure">Départ</label>
+            <input type="text" id="departure" name="departure" required>
+
+            <label for="arrival">Arrivée</label>
+            <input type="text" id="arrival" name="arrival" required>
+
+            <label for="departureDate">Date de Départ</label>
+            <input type="date" id="departureDate" name="departureDate" required>
+
+            <label for="departureTime">Heure de Départ</label>
+            <input type="time" id="departureTime" name="departureTime" required>
+
+            <label for="arrivalDate">Date d'Arrivée</label>
+            <input type="date" id="arrivalDate" name="arrivalDate" required>
+
+            <label for="arrivalTime">Heure d'Arrivée</label>
+            <input type="time" id="arrivalTime" name="arrivalTime" required>
+
+            <label for="price">Prix</label>
+            <input type="number" id="price" name="price" required min="0" step="0.01">
+
+            <div class="form-actions">
+                <button type="button" id="saveBtn" class="action-btn save-btn">Enregistrer</button>
+                <button type="button" id="cancelBtn" class="action-btn cancel-btn">Annuler</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="/js/manage-flight.js"></script>
+</body>
+</html>

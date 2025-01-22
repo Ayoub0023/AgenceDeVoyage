@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Manage Flight Reservations</title>
+</head>
+<body>
+<h1>Manage Flight Reservations</h1>
+<table border="1">
+    <tr>
+        <th>Reservation ID</th>
+        <th>User ID</th>
+        <th>Flight ID</th>
+        <th>Booking Date</th>
+        <th>Status</th>
+        <th>Total Price</th>
+    </tr>
+    <tr th:each="reservation : ${flightReservations}">
+        <td th:text="${reservation.reservationId}"></td>
+        <td th:text="${reservation.userId}"></td>
+        <td th:text="${reservation.flightId}"></td>
+        <td th:text="${reservation.bookingDateTime}"></td>
+        <td th:text="${reservation.status}"></td>
+        <td th:text="${reservation.totalPrice}"></td>
+    </tr>
+</table>
+</body>
+</html>

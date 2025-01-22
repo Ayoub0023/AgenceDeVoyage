@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Manage Reservations</title>
+</head>
+<body>
+<h1>Manage Reservations</h1>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>User ID</th>
+        <th>Hotel ID</th>
+        <th>Check-In Date</th>
+        <th>Check-Out Date</th>
+        <th>Status</th>
+        <th>Total Price</th>
+    </tr>
+    <tr th:each="reservation : ${reservations}">
+        <td th:text="${reservation.id}"></td>
+        <td th:text="${reservation.userId}"></td>
+        <td th:text="${reservation.hotelId}"></td>
+        <td th:text="${reservation.checkInDate}"></td>
+        <td th:text="${reservation.checkOutDate}"></td>
+        <td th:text="${reservation.status}"></td>
+        <td th:text="${reservation.totalPrice}"></td>
+    </tr>
+</table>
+</body>
+</html>

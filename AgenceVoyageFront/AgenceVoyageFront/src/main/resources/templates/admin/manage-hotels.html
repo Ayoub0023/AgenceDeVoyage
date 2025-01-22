@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gérer les Hôtels</title>
+    <link rel="stylesheet" href="/css/manage-hotel.css">
+    <link rel="stylesheet" href="/css/SharedStyles.css">
+</head>
+<body>
+<!-- Include header -->
+<div th:replace="header :: header"></div>
+
+<main>
+    <div class="title-container">
+        <h1 class="page-title">Gérer les Hôtels</h1>
+    </div>
+    <div class="table-container">
+        <button id="addHotelBtn" class="action-btn add-btn">+</button>
+        <table class="hotel-table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Localisation</th>
+                <th>Prix par Nuit</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody id="hotelList">
+            <!-- Les hôtels seront chargés dynamiquement ici -->
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<!-- Form Popup for Add/Edit -->
+<div id="hotelFormPopup" class="popup hidden">
+    <div class="popup-content">
+        <h2 id="popupTitle">Ajouter un Hôtel</h2>
+        <form id="hotelForm">
+            <label for="hotelName">Nom</label>
+            <input type="text" id="hotelName" name="name" required>
+
+            <label for="hotelLocation">Localisation</label>
+            <input type="text" id="hotelLocation" name="location" required>
+
+            <label for="hotelPrice">Prix par Nuit</label>
+            <input type="number" id="hotelPrice" name="price" required min="0" step="0.01">
+
+            <div class="form-actions">
+                <button type="button" id="saveBtn" class="action-btn save-btn">Enregistrer</button>
+                <button type="button" id="cancelBtn" class="action-btn cancel-btn">Annuler</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="/js/manage-hotel.js"></script>
+</body>
+</html>

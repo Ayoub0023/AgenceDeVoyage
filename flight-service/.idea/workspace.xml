@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a8f00ba2-2bf4-4232-8c3d-4782101dc643" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../AgenceVoyageFront/AgenceVoyageFront/src/main/java/com/AgenceVoyageFront/model/Flight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AgenceVoyageFront/AgenceVoyageFront/src/main/java/com/AgenceVoyageFront/model/FlightReservation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AgenceVoyageFront/AgenceVoyageFront/src/main/resources/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AgenceVoyageFront/AgenceVoyageFront/src/main/resources/templates/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../config-repo/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../config-repo/.idea/config-repo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../config-repo/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../config-repo/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../config-repo/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../config-server/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../config-server/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../config-server/.idea/config-server.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../config-server/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../config-server/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../config-server/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../config-server/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../config-server/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/travel/flightservice/FlightServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/travel/flightservice/client/UserClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/travel/flightservice/config/FeignClientConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/travel/flightservice/controller/FlightController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/travel/flightservice/controller/FlightReservationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/travel/flightservice/model/Flight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/travel/flightservice/model/FlightReservation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/travel/flightservice/repository/FlightRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/travel/flightservice/repository/FlightReservationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/travel/flightservice/service/FlightReservationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/travel/flightservice/service/FlightService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/travel/flightservice/FlightServiceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hotel-service/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hotel-service/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hotel-service/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hotel-service/.idea/hotel-service.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hotel-service/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hotel-service/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hotel-service/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hotel-service/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL DB statements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../MySQL DB statements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api-gateway/api-gateway/src/main/java/com/travel/api_gateway/ApiGatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../api-gateway/api-gateway/src/main/java/com/travel/api_gateway/ApiGatewayApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api-gateway/api-gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../api-gateway/api-gateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../config-repo/car-service.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../config-repo/car-service.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../config-repo/flight-service.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../config-repo/flight-service.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eureka-server/.idea/eureka-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../eureka-server/.idea/eureka-server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-service/hotel-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-service/hotel-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-service/hotel-service/src/main/java/com/agencevoyage/hotel_service/HotelServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-service/hotel-service/src/main/java/com/agencevoyage/hotel_service/controller/BookingController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-service/hotel-service/src/main/java/com/agencevoyage/hotel_service/controller/CustomerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-service/hotel-service/src/main/java/com/agencevoyage/hotel_service/controller/HotelController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-service/hotel-service/src/main/java/com/agencevoyage/hotel_service/controller/HotelReviewController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-service/hotel-service/src/main/java/com/agencevoyage/hotel_service/controller/RoomController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-service/hotel-service/src/main/java/com/agencevoyage/hotel_service/model/Booking.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-service/hotel-service/src/main/java/com/agencevoyage/hotel_service/model/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-service/hotel-service/src/main/java/com/agencevoyage/hotel_service/model/Hotel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-service/hotel-service/src/main/java/com/agencevoyage/hotel_service/model/HotelReview.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-service/hotel-service/src/main/java/com/agencevoyage/hotel_service/model/Room.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-service/hotel-service/src/main/java/com/agencevoyage/hotel_service/repository/BookingRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-service/hotel-service/src/main/java/com/agencevoyage/hotel_service/repository/CustomerRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-service/hotel-service/src/main/java/com/agencevoyage/hotel_service/repository/HotelRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-service/hotel-service/src/main/java/com/agencevoyage/hotel_service/repository/HotelReviewRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-service/hotel-service/src/main/java/com/agencevoyage/hotel_service/repository/RoomRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-service/hotel-service/src/main/java/com/agencevoyage/hotel_service/service/BookingService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-service/hotel-service/src/main/java/com/agencevoyage/hotel_service/service/CustomerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-service/hotel-service/src/main/java/com/agencevoyage/hotel_service/service/HotelReviewService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-service/hotel-service/src/main/java/com/agencevoyage/hotel_service/service/HotelService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-service/hotel-service/src/main/java/com/agencevoyage/hotel_service/service/RoomService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-service/hotel-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../hotel-service/hotel-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotel-service/hotel-service/src/test/java/com/agencevoyage/hotel_service/HotelServiceApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2quUmWgO9aNH8PpV8vbNRCiLTjP" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.FlightServiceApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/HP/Desktop/AgenceDeVoyage/AgenceDeVoyage/AgenceDeVoyage/user-service",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="FlightServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="flight-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.travel.flightservice.FlightServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a8f00ba2-2bf4-4232-8c3d-4782101dc643" name="Changes" comment="" />
+      <created>1735512116476</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1735512116476</updated>
+      <workItem from="1735512117181" duration="5293000" />
+      <workItem from="1735517447375" duration="13278000" />
+      <workItem from="1735762956540" duration="2857000" />
+      <workItem from="1735816990945" duration="1981000" />
+      <workItem from="1735904702913" duration="441000" />
+      <workItem from="1735989687840" duration="314000" />
+      <workItem from="1736076328075" duration="1695000" />
+      <workItem from="1736344520148" duration="2193000" />
+      <workItem from="1736506513089" duration="915000" />
+      <workItem from="1736613700469" duration="701000" />
+      <workItem from="1736678443177" duration="3179000" />
+      <workItem from="1736801866958" duration="1895000" />
+      <workItem from="1736851098124" duration="990000" />
+      <workItem from="1736860642748" duration="684000" />
+      <workItem from="1736886675308" duration="613000" />
+      <workItem from="1736927030321" duration="794000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

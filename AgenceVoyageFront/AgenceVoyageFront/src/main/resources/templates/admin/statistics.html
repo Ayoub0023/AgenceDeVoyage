@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistiques</title>
+    <link rel="stylesheet" href="/css/statistics.css">
+    <link rel="stylesheet" href="/css/SharedStyles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<!-- Include header -->
+<div th:replace="header :: header"></div>
+
+<main>
+    <div class="title-container">
+        <h1 class="page-title">Statistiques</h1>
+    </div>
+
+    <!-- Gains Overview -->
+    <div class="gains-overview">
+        <h2>Résumé des Gains</h2>
+        <p>Gains Aujourd'hui : <strong th:text="${dailyGains} + ' MAD'"></strong></p>
+        <p>Gains ce Mois : <strong th:text="${monthlyGains} + ' MAD'"></strong></p>
+        <p>Gains cette Année : <strong th:text="${yearlyGains} + ' MAD'"></strong></p>
+    </div>
+
+    <!-- Charts -->
+    <div class="chart-container">
+        <canvas id="dailyGainsChart"></canvas>
+    </div>
+    <div class="chart-container">
+        <canvas id="monthlyGainsChart"></canvas>
+    </div>
+    <div class="chart-container">
+        <canvas id="yearlyGainsChart"></canvas>
+    </div>
+</main>
+
+<script src="/js/statistics.js"></script>
+</body>
+</html>

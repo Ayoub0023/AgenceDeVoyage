@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Agency</title>
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="logo">TravelDreams</div>
+
+<!--    <div class="nav-links">-->
+<!--        <a href="#home" class="nav-link">Accueil</a>-->
+<!--        <a href="#about" class="nav-link">À propos</a>-->
+<!--        <a href="#contact" class="nav-link">Contact</a>-->
+<!--        <a href="/login" class="nav-link">Connexion</a>-->
+<!--        <a href="/register" class="nav-btn">S'inscrire</a>-->
+<!--    </div>-->
+    <div class="nav-links">
+        <a href="#home" class="nav-link">Accueil</a>
+        <a href="#about" class="nav-link">À propos</a>
+        <a href="#contact" class="nav-link">Contact</a>
+
+        <div th:if="${session.username != null}">
+            <span class="nav-link" th:text="${session.username}"></span>
+            <a href="/logout" class="nav-btn">Déconnexion</a>
+        </div>
+        <div th:if="${session.username == null}">
+            <a href="/login" class="nav-link">Connexion</a>
+            <a href="/register" class="nav-btn">S'inscrire</a>
+        </div>
+    </div>
+
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1>Découvrez le monde avec nous</h1>
+        <p>Votre voyage de rêve commence ici</p>
+        <div class="cta-buttons">
+            <a href="/client/client-booking" class="cta-btn">Réserver un hôtel</a>
+            <a href="/client/client-booking" class="cta-btn">Louer une voiture</a>
+            <a href="/client/client-booking" class="cta-btn">Réserver un vol</a>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Destinations -->
+<section class="destinations">
+    <h2>Destinations populaires</h2>
+    <div class="destination-grid">
+        <div class="destination-card">
+            <img src="/images/paris.jpg" alt="Paris">
+            <h3>Paris</h3>
+        </div>
+        <div class="destination-card">
+            <img src="/images/dubai.jpg" alt="Dubai">
+            <h3>Dubai</h3>
+        </div>
+        <div class="destination-card">
+            <img src="/images/tokyo.webp" alt="Tokyo">
+            <h3>Tokyo</h3>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about">
+    <h2>À propos de nous</h2>
+    <div class="about-content">
+        <div class="about-text">
+            <p>TravelDreams est votre partenaire de confiance pour tous vos voyages. Nous nous engageons à vous offrir :</p>
+            <ul>
+                <li>Des services de qualité supérieure</li>
+                <li>Les meilleurs prix garantis</li>
+                <li>Une assistance 24/7</li>
+                <li>Des expériences de voyage uniques</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <h2>Contactez-nous</h2>
+    <div class="contact-content">
+        <div class="contact-info">
+            <h3>Nos coordonnées</h3>
+            <p>📞 +212 6 23 45 67 89</p>
+            <p>✉️ contact@traveldreams.com</p>
+            <p>🏢 123 Avenue Hassan 2, Rabat</p>
+        </div>
+        <form class="contact-form">
+            <input type="text" placeholder="Nom complet">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Votre message"></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2024 TravelDreams. Tous droits réservés.</p>
+</footer>
+
+<script th:src="@{/js/home.js}"></script>
+</body>
+</html>

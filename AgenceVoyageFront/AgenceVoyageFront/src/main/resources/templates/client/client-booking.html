@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Portal</title>
+    <link rel="stylesheet" href="/css/client-booking.css">
+</head>
+<body>
+<header>
+    <nav class="main-nav">
+        <button class="tab" data-category="hotels">Hotels</button>
+        <button class="tab" data-category="flights">Flights</button>
+        <button class="tab" data-category="cars">Cars</button>
+        <a href="/client/my-reservations" class="my-reservations">My Reservations</a>
+        <button class="disconnect-button" onclick="window.location.href='/logout';">Disconnect</button>
+    </nav>
+</header>
+
+<main>
+    <!-- Flights Section -->
+    <section id="flights" class="category-section">
+        <div class="flights-container">
+            <div class="flight-card" th:each="flight : ${flights}" th:data-id="${flight.id}" th:data-price="${flight.price}">
+                <h3 th:text="${flight.airline}">Flight Name</h3>
+                <div class="flight-info">
+                    <div class="flight-times">
+                        <div class="departure">
+                            <p><strong>Départ:</strong> <span th:text="${flight.departure}"></span></p>
+                            <p><span th:text="${flight.departureTime}"></span></p>
+                        </div>
+                        <div class="arrow">→</div>
+                        <div class="arrival">
+                            <p><strong>Arrivée:</strong> <span th:text="${flight.arrival}"></span></p>
+                            <p><span th:text="${flight.arrivalTime}"></span></p>
+                        </div>
+                    </div>
+                    <div class="flight-details">
+                        <p><strong>Compagnie:</strong> <span th:text="${flight.airline}"></span></p>
+                        <p><strong>Prix:</strong> <span th:text="${flight.price}"></span> MAD</p>
+                    </div>
+                </div>
+                <div class="flight-action">
+                    <button class="add-to-cart" th:data-id="${flight.id}" th:data-price="${flight.price}">Réserver</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hotels Section -->
+    <section id="hotels" class="category-section">
+        <div class="item" th:each="hotel : ${hotels}" th:data-id="${hotel.id}" th:data-name="${hotel.name}" th:data-price="${hotel.pricePerNight}">
+            <img th:src="'/images/' + ${hotel.imagePath}" alt="Hotel">
+            <h3 th:text="${hotel.name}">Hotel Name</h3>
+            <p>Price: <span th:text="${hotel.pricePerNight}"></span> MAD</p>
+            <button class="add-to-cart">+</button>
+        </div>
+    </section>
+
+    <!-- Cars Section -->
+    <section id="cars" class="category-section hidden">
+        <div class="cars-container">
+            <div class="car-card" th:each="car : ${cars}" th:data-id="${car.id}" th:data-price="${car.pricePerDay}">
+                <img th:src="'/images/' +${car.imageUrl}" alt="Car Image" class="car-image" />
+                <h3 th:text="${car.model}">Car Model</h3>
+                <p><strong>Agency:</strong> <span th:text="${car.agency}"></span></p>
+                <p><strong>Price Per Day:</strong> <span th:text="${car.pricePerDay}"></span> MAD</p>
+                <button class="add-to-cart" th:data-id="${car.id}" th:data-price="${car.pricePerDay}">Réserver</button>
+            </div>
+        </div>
+    </section>
+
+    <aside class="cart">
+        <h2>Cart</h2>
+        <ul id="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </ul>
+        <p>Total: <span id="total-price">0</span> MAD</p>
+        <button id="checkout">Checkout</button>
+    </aside>
+</main>
+
+<!-- Popup Form -->
+<div id="popup" class="popup hidden">
+    <div class="popup-content">
+        <!-- Content will be dynamically added here by JavaScript -->
+    </div>
+</div>
+
+<script src="/js/client-booking.js"></script>
+</body>
+</html>
